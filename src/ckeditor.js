@@ -97,7 +97,7 @@ ClassicEditor.builtinPlugins = [
 	Subscript,
 	Superscript,
 	Title,
-	Underline,
+	Underline
 ];
 
 // Editor configuration.
@@ -131,7 +131,7 @@ ClassicEditor.defaultConfig = {
 			'indent',
 			'outdent',
 			'specialCharacters',
-			'pageBreak',
+			'pageBreak'
 		]
 	},
 	image: {
