@@ -7,13 +7,12 @@
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
-import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
+import CKFinderUploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
@@ -29,19 +28,39 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import AutoImage from '@ckeditor/ckeditor5-image/src/autoimage';
+import Autolink from '@ckeditor/ckeditor5-link/src/autolink';
+import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
+import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
+import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar';
+import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersArrows from '@ckeditor/ckeditor5-special-characters/src/specialcharactersarrows';
+import SpecialCharactersCurrency from '@ckeditor/ckeditor5-special-characters/src/specialcharacterscurrency';
+import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials';
+import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical';
+import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+import Title from '@ckeditor/ckeditor5-heading/src/title';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
 	Essentials,
-	UploadAdapter,
+	CKFinderUploadAdapter,
 	Autoformat,
 	Bold,
 	Italic,
 	BlockQuote,
 	CKFinder,
-	EasyImage,
 	Heading,
 	Image,
 	ImageCaption,
@@ -56,7 +75,29 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	Alignment,
+	AutoImage,
+	Autolink,
+	Autosave,
+	Code,
+	HorizontalLine,
+	ImageInsert,
+	LinkImage,
+	MediaEmbed,
+	MediaEmbedToolbar,
+	PageBreak,
+	SpecialCharacters,
+	SpecialCharactersArrows,
+	SpecialCharactersCurrency,
+	SpecialCharactersEssentials,
+	SpecialCharactersMathematical,
+	SpecialCharactersText,
+	Strikethrough,
+	Subscript,
+	Superscript,
+	Title,
+	Underline,
 ];
 
 // Editor configuration.
@@ -67,27 +108,38 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'bold',
 			'italic',
-			'link',
+			'underline',
+			'strikethrough',
+			'subscript',
+			'superscript',
+			'|',
 			'bulletedList',
 			'numberedList',
+			'alignment',
+			'|',
+			'blockQuote',
+			'code',
+			'horizontalLine',
+			'|',
+			'link',
+			'imageInsert',
+			'mediaEmbed',
+			'|',
+			'undo',
+			'redo',
 			'|',
 			'indent',
 			'outdent',
-			'|',
-			'imageUpload',
-			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
-			'undo',
-			'redo'
+			'specialCharacters',
+			'pageBreak',
 		]
 	},
 	image: {
 		toolbar: [
+			'imageTextAlternative',
 			'imageStyle:full',
 			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
+			'linkImage'
 		]
 	},
 	table: {
